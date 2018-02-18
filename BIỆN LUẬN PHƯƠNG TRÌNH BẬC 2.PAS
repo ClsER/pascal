@@ -1,0 +1,26 @@
+PROGRAM BIEN_LUAN_PHUONG_TRINH_BAC2; // KHAI BÁO TÊN CHƯƠNG TRÌNH
+
+USES CRT; // KHAI BÁO UNIT
+// KHAI BÁO CÁC BIẾN CHỨA!
+VAR A,B,C:INTEGER;
+    DELTA:LONGINT;
+// CHƯƠNG TRÌNH CHÍNH!
+BEGIN
+     WRITE('NHAP VAO A,B,C: ');READLN(A,B,C); // NHẬP XUẤT GIÁ TRỊ A,B,C!
+     WRITE(A,'X^2 + ',B,' + ',C,' = 0'); // HIỂN THỊ PHƯƠNG TRÌNH RA MÀN HÌNH!
+     // TÍNH DELTA
+     DELTA := SQR(B) - 4*A*C;
+     // XỬ LÍ DELTA VÀ BIỆN LUẬN!
+     IF DELTA > 0 THEN  // CHO DELTA > 0
+     BEGIN // BIỆN LUẬN DELTA > 0
+          WRITELN('PHUONG TRINH CO HAI NGHIEM PHAN BIET');
+          WRITELN('X1 = ',(-B + SQRT(DELTA)/2):0:1,'| X2 = ',(-B - SQRT(DELTA)/2):0:1);
+     END  // BIỆN LUẬN DELTA = 0
+     ELSE IF DELTA = 0 THEN
+     BEGIN
+          WRITELN('PHUONG TRINH CO NGHIEM KEP!');
+          WRITELN('X = ',(-B/2*A):0:1);
+     END  // BIỆN LUẬN DELTA < 0
+     ELSE WRITELN('PHUONG TRINH VO NGHIEM!!!');
+     READLN;
+end.
